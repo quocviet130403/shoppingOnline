@@ -4,7 +4,7 @@ import { print, OutputType } from "../helpers/print.js"
 
 async function connect() {
     try {
-        let connection = mongoose.connect(process.env.MONGO_URL)
+        let connection = await mongoose.connect(process.env.MONGO_URL)
         print("Connect mongoose successfully", OutputType.SUCCESS)
         return connection
     } catch (error) {
